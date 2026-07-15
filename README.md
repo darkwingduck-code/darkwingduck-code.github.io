@@ -1,4 +1,8 @@
-# Chirpy Starter
+# Gyeongtae Im — Technical Notes
+
+물리 기반 시뮬레이션, 과학 컴퓨팅, AI 자동화에 관한 재현 가능한 기술 기록입니다.
+
+Live site: [darkwingduck-code.github.io](https://darkwingduck-code.github.io)
 
 [![Gem Version](https://img.shields.io/gem/v/jekyll-theme-chirpy)][gem]&nbsp;
 [![GitHub license](https://img.shields.io/github/license/cotes2020/chirpy-starter.svg?color=blue)][mit]
