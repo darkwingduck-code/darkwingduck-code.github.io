@@ -148,7 +148,10 @@ assets:
     env: # [development | production]
 
 pwa:
-  enabled: true # The option for PWA feature (installable)
+  # Disable registration so returning visitors do not receive a stale cached
+  # homepage after new posts are deployed. Chirpy's app script also unregisters
+  # existing service workers when this is false.
+  enabled: false
   cache:
     enabled: true # The option for PWA offline cache
     # Paths defined here will be excluded from the PWA cache.
