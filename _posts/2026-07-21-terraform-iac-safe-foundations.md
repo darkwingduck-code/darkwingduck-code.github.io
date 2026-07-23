@@ -4,7 +4,11 @@ date: 2026-07-21 09:30:00 +0900
 categories: [Platform Engineering, Infrastructure]
 tags: [terraform, infrastructure-as-code, state-management, security, devops]
 description: Terraform을 선언형 변경 시스템으로 이해하고 모듈 계약, 환경 격리, 원격 state, 비밀 관리와 plan/apply 검증 절차를 설계합니다.
+lang: ko-KR
+translation_key: terraform-iac-safe-foundations
 ---
+
+{% include language-switcher.html %}
 
 ## 문제: 코드로 만들었다고 인프라가 자동으로 안전해지지는 않는다
 

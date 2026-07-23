@@ -5,7 +5,11 @@ categories: [Data Engineering, Database Design]
 tags: [sql, normalization, 1nf, 2nf, 3nf, bcnf, functional-dependency, data-modeling]
 description: "함수 종속성과 후보키에서 출발해 1NF·2NF·3NF·BCNF를 판정하고, 무손실 분해·종속성 보존·반정규화의 실전 기준까지 정리한다."
 math: true
+lang: ko-KR
+translation_key: sql-normalization-1nf-2nf-3nf-bcnf
 ---
+
+{% include language-switcher.html %}
 
 정규화는 표를 많이 쪼개는 규칙이 아니다. 핵심은 **하나의 사실을 한 곳에서만 관리해 갱신 이상을 줄이는 것**이다. 이를 제대로 적용하려면 column 이름이 아니라 업무 규칙인 함수 종속성(functional dependency)을 먼저 적어야 한다.
 

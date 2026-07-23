@@ -8,6 +8,7 @@ It is a high-signal guardrail, not a substitute for human review.
 
 from __future__ import annotations
 
+import argparse
 import re
 import sys
 from dataclasses import dataclass
@@ -16,7 +17,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 POSTS = ROOT / "_posts"
-TEXT_ROOTS = (ROOT / "_posts", ROOT / "_tabs", ROOT / "docs")
+TEXT_ROOTS = (ROOT / "_posts", ROOT / "_tabs", ROOT / "docs", ROOT / "languages")
 
 
 @dataclass(frozen=True)
@@ -64,6 +65,9 @@ POST_NAME = re.compile(r"^\d{4}-\d{2}-\d{2}-[a-z0-9]+(?:-[a-z0-9]+)*\.md$")
 DATE_VALUE = re.compile(
     r"^\d{4}-\d{2}-\d{2}[ T]\d{2}:\d{2}:\d{2} (?:[+-]\d{4}|[+-]\d{2}:\d{2})$"
 )
+SUPPORTED_LANGUAGES = ("ko-KR", "ja-JP", "en", "fr-FR", "de-DE")
+LANGUAGE_SUFFIXES = {"ko-KR": "", "ja-JP": "ja", "en": "en", "fr-FR": "fr", "de-DE": "de"}
+TRANSLATION_INCLUDE = "{% include language-switcher.html %}"
 
 
 def iter_text_files() -> list[Path]:
@@ -90,6 +94,12 @@ def front_matter(path: Path, text: str) -> tuple[dict[str, str], int]:
         if match:
             values[match.group(1)] = match.group(2)
     return values, closing
+
+
+def unquote(value: str) -> str:
+    if len(value) >= 2 and value[0] == value[-1] and value[0] in "\"'":
+        return value[1:-1]
+    return value
 
 
 def scan_sensitive(path: Path, text: str) -> list[Finding]:
@@ -124,7 +134,27 @@ def validate_post(path: Path, text: str) -> list[Finding]:
         if not metadata.get(key):
             findings.append(Finding(relative, 1, "front-matter", f"missing {key}"))
 
-    date = metadata.get("date", "")
+    lang = unquote(metadata.get("lang", ""))
+    if lang not in SUPPORTED_LANGUAGES:
+        findings.append(Finding(relative, 1, "language", f"expected one of {SUPPORTED_LANGUAGES}, got {lang!r}"))
+
+    translation_exempt = metadata.get("translation_exempt") == "true"
+    translation_key = unquote(metadata.get("translation_key", ""))
+    if not translation_exempt:
+        if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", translation_key):
+            findings.append(Finding(relative, 1, "translation-key", translation_key or "missing translation_key"))
+        if TRANSLATION_INCLUDE not in text:
+            findings.append(Finding(relative, closing + 2, "language-switcher", f"add {TRANSLATION_INCLUDE}"))
+        suffix = LANGUAGE_SUFFIXES.get(lang)
+        if translation_key and suffix is not None:
+            translated_slug = translation_key if not suffix else f"{translation_key}-{suffix}"
+            expected_name = f"{path.name[:11]}{translated_slug}.md"
+            if path.name != expected_name:
+                findings.append(Finding(relative, 1, "translation-filename", f"expected {expected_name}"))
+        if lang in SUPPORTED_LANGUAGES and lang != "ko-KR" and metadata.get("hidden") != "true":
+            findings.append(Finding(relative, 1, "translation-visibility", "non-Korean editions need `hidden: true`"))
+
+    date = unquote(metadata.get("date", ""))
     if date and not DATE_VALUE.fullmatch(date):
         findings.append(Finding(relative, 1, "date-format", date))
 
@@ -135,7 +165,7 @@ def validate_post(path: Path, text: str) -> list[Finding]:
 
     categories = metadata.get("categories", "")
     if categories.startswith("[") and categories.endswith("]"):
-        category_items = [item.strip() for item in categories[1:-1].split(",") if item.strip()]
+        category_items = [unquote(item.strip()) for item in categories[1:-1].split(",") if item.strip()]
         if len(category_items) != 2:
             findings.append(
                 Finding(relative, 1, "categories-count", f"expected 2, got {len(category_items)}")
@@ -143,7 +173,7 @@ def validate_post(path: Path, text: str) -> list[Finding]:
 
     tags = metadata.get("tags", "")
     if tags:
-        for tag in (item.strip() for item in tags[1:-1].split(",")):
+        for tag in (unquote(item.strip()) for item in tags[1:-1].split(",")):
             if tag and tag != tag.lower():
                 findings.append(Finding(relative, 1, "tag-case", tag))
             if tag and not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", tag):
@@ -159,13 +189,26 @@ def validate_post(path: Path, text: str) -> list[Finding]:
     if fence_count % 2:
         findings.append(Finding(relative, 1, "markdown-fence", f"odd count: {fence_count}"))
 
+    if text.count("$$") % 2:
+        findings.append(Finding(relative, 1, "math-delimiter", "unbalanced $$ delimiter"))
+    for opening, closing_delimiter in ((r"\[", r"\]"), (r"\(", r"\)")):
+        opening_count = text.count(opening)
+        closing_count = text.count(closing_delimiter)
+        if opening_count != closing_count:
+            findings.append(Finding(relative, 1, "math-delimiter", f"{opening}={opening_count}, {closing_delimiter}={closing_count}"))
+
     return findings
 
 
 def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--allow-incomplete-translations", action="store_true")
+    args = parser.parse_args()
+
     findings: list[Finding] = []
     paths = iter_text_files()
     titles: dict[str, Path] = {}
+    translation_groups: dict[str, dict[str, Path]] = {}
 
     for path in paths:
         text = path.read_text(encoding="utf-8")
@@ -181,6 +224,29 @@ def main() -> int:
                 )
             elif title:
                 titles[title] = relative
+
+            if metadata.get("translation_exempt") != "true":
+                translation_key = unquote(metadata.get("translation_key", ""))
+                lang = unquote(metadata.get("lang", ""))
+                if translation_key and lang:
+                    group = translation_groups.setdefault(translation_key, {})
+                    if lang in group:
+                        findings.append(Finding(relative, 1, "duplicate-translation", f"{translation_key}/{lang} also used by {group[lang]}"))
+                    else:
+                        group[lang] = relative
+
+    expected_languages = set(SUPPORTED_LANGUAGES)
+    for translation_key, group in sorted(translation_groups.items()):
+        actual_languages = set(group)
+        if actual_languages != expected_languages and not args.allow_incomplete_translations:
+            missing = sorted(expected_languages - actual_languages)
+            extra = sorted(actual_languages - expected_languages)
+            details: list[str] = []
+            if missing:
+                details.append(f"missing {', '.join(missing)}")
+            if extra:
+                details.append(f"unsupported {', '.join(extra)}")
+            findings.append(Finding(next(iter(group.values())), 1, "translation-completeness", f"{translation_key}: {'; '.join(details)}"))
 
     if findings:
         print("Content audit failed:", file=sys.stderr)

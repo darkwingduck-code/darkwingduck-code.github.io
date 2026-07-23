@@ -4,7 +4,11 @@ date: 2026-07-21 10:40:00 +0900
 categories: [Software Engineering, Testing]
 tags: [testing, pytest, contract-testing, property-testing, integration-testing, quality]
 description: 단위·통합·계약·E2E 테스트를 위험에 맞게 조합하고 좋은 oracle과 불변조건을 설계하는 방법을 정리합니다.
+lang: ko-KR
+translation_key: software-testing-strategy
 ---
+
+{% include language-switcher.html %}
 
 테스트의 목적은 코드 줄을 실행하는 것이 아니라 **중요한 실패를 릴리스 전에 발견하고, 변경 후에도 계약이 유지된다는 증거를 만드는 것**이다. coverage가 높아도 assertion이 약하거나 실제 위험을 건드리지 않으면 신뢰도는 낮다.
 

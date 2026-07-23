@@ -5,7 +5,11 @@ categories: [Mathematics, Numerical Linear Algebra]
 tags: [least-squares, projection, conditioning, qr, svd, pseudoinverse, regularization]
 description: "최소제곱을 직교투영 문제로 해석하고 조건수, QR, SVD, 의사역행렬, 정규화를 수치 안정성 관점에서 연결한다."
 math: true
+lang: ko-KR
+translation_key: least-squares-projection-conditioning-svd
 ---
+
+{% include language-switcher.html %}
 
 관측식 \(Ax=b\)가 정확히 풀리지 않을 때 흔히 “양변에 \(A^\mathsf T\)를 곱한다”고 배운다. 하지만 최소제곱의 본질은 공식 암기가 아니라 세 가지 질문에 있다.
 

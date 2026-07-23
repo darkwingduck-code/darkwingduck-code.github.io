@@ -3,10 +3,14 @@ title: "HTTP 장애를 제대로 읽기 위한 네트워크 계층과 신뢰성 
 date: 2026-07-21 10:20:00 +0900
 categories: [Software Engineering, Networking]
 tags: [http, dns, tcp, tls, timeout, retry, observability]
-mermaid: true
-math: true
 description: DNS부터 HTTP까지 요청 경로를 계층별로 분해하고 timeout, retry, idempotency를 안전하게 설계하는 방법을 설명합니다.
+math: true
+mermaid: true
+lang: ko-KR
+translation_key: http-networking-reliability
 ---
+
+{% include language-switcher.html %}
 
 “API가 느리다”는 원인 진단이 아니라 증상이다. 한 요청은 DNS 조회, 연결 수립, TLS 협상, 서버 큐잉, 애플리케이션 처리, 데이터베이스, 응답 전송을 통과한다. 이 경로를 분해하지 않으면 캐시, 서버 증설, 재시도 중 무엇을 해도 우연에 의존하게 된다.
 

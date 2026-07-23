@@ -5,7 +5,11 @@ categories: [Scientific Computing, Research Methods]
 tags: [doe, sensitivity-analysis, uncertainty-quantification, calibration, identifiability, surrogate-model]
 description: "실험계획법, 국소·전역 민감도, 불확실성 전파, parameter calibration을 구분하고 하나의 재현 가능한 시뮬레이션 연구 절차로 연결한다."
 math: true
+lang: ko-KR
+translation_key: doe-sensitivity-uq-calibration
 ---
+
+{% include language-switcher.html %}
 
 시뮬레이션 입력을 몇 개 바꾸고 출력 곡선을 비교하는 것만으로는 강한 결론을 만들기 어렵다. 변수 효과, interaction, 입력 불확실성, parameter 추정, 모델 오차가 한꺼번에 섞이기 때문이다.
 

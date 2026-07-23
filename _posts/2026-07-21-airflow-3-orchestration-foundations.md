@@ -4,7 +4,11 @@ date: 2026-07-21 10:10:00 +0900
 categories: [Data Engineering, Orchestration]
 tags: [airflow, orchestration, data-pipelines, idempotency, observability]
 description: Airflow 3의 Dag·task·data interval을 기준으로 XCom, Connection, Variable, retry, backfill, deferrable sensor, asset scheduling과 운영 검증을 설계합니다.
+lang: ko-KR
+translation_key: airflow-3-orchestration-foundations
 ---
+
+{% include language-switcher.html %}
 
 ## 문제: task를 순서대로 연결하는 것만으로 운영 가능한 pipeline이 되지 않는다
 

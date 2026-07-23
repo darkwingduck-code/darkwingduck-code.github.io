@@ -1,0 +1,25 @@
+- code: ko-KR
+  slug: ko
+  label: 한국어
+  title: 한국어 기술 노트
+  description: 원문과 한국어 기술 노트를 모아 봅니다.
+- code: ja-JP
+  slug: ja
+  label: 日本語
+  title: 日本語の技術ノート
+  description: 日本語版の技術ノートを一覧で確認できます。
+- code: en
+  slug: en
+  label: English
+  title: Technical Notes in English
+  description: Browse the English editions of the technical notes.
+- code: fr-FR
+  slug: fr
+  label: Français
+  title: Notes techniques en français
+  description: Parcourez les versions françaises des notes techniques.
+- code: de-DE
+  slug: de
+  label: Deutsch
+  title: Technische Notizen auf Deutsch
+  description: Hier finden Sie die deutschen Fassungen der technischen Notizen.

@@ -4,7 +4,11 @@ date: 2026-07-21 10:00:00 +0900
 categories: [Research Engineering, Reproducibility]
 tags: [research-software, reproducibility, release, git-tag, citation-cff, zenodo, software-doi, preprint]
 description: "연구 코드 저장소를 재현 가능한 release로 만들고 CITATION.cff, 보존 archive, software DOI를 연결하되 논문·preprint와 식별자를 분리하는 절차를 정리한다."
+lang: ko-KR
+translation_key: reproducible-research-software-release-doi
 ---
+
+{% include language-switcher.html %}
 
 연구 코드가 공개 저장소에 있다는 사실만으로 재현 가능하거나 인용 가능한 것은 아니다. default branch는 계속 바뀌고, dependency는 사라지며, 어떤 commit이 결과를 만들었는지 독자가 알기 어렵기 때문이다.
 

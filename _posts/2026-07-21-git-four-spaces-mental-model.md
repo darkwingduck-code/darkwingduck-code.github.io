@@ -5,7 +5,11 @@ categories: [Platform Engineering, Git]
 tags: [git, version-control, workflow, reproducibility]
 description: Git의 작업 트리, 스테이징 영역, 로컬 저장소, 원격 저장소를 구분하고 안전하게 변경을 기록·동기화하는 실전 모델을 정리합니다.
 mermaid: true
+lang: ko-KR
+translation_key: git-four-spaces-mental-model
 ---
+
+{% include language-switcher.html %}
 
 ## 문제: 명령을 외워도 Git이 계속 불안한 이유
 

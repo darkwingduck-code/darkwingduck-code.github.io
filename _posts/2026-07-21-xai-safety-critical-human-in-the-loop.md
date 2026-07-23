@@ -3,10 +3,14 @@ title: "XAI와 Safety-Critical Human-in-the-Loop 의사결정"
 date: 2026-07-21 09:00:00 +0900
 categories: [AI, AI Safety]
 tags: [xai, explainable-ai, human-in-the-loop, uncertainty, ai-safety]
-mermaid: true
-math: true
 description: 설명 가능성을 모델 장식이 아닌 의사결정 안전장치로 설계하고, 충실도·안정성·불확실성·선택적 예측·인간 검토 성능을 함께 검증하는 방법을 정리합니다.
+math: true
+mermaid: true
+lang: ko-KR
+translation_key: xai-safety-critical-human-in-the-loop
 ---
+
+{% include language-switcher.html %}
 
 안전이 중요한 영역에서 설명 가능성(XAI)은 예쁜 특징 중요도 그래프가 아니다. 설명은 **모델 판단을 이해하고, 오류를 발견하고, 사람이 적절히 수용·거부하고, 사후에 의사결정을 감사하기 위한 인터페이스**다.
 

@@ -5,7 +5,11 @@ categories: [Software Engineering, Simulation Testing]
 tags: [determinism, simulation-testing, invariants, property-based-testing, replay, regression-testing, reproducibility]
 description: "결정론적 시뮬레이터를 예제 몇 개가 아니라 불변량, 생성형 속성 테스트, 상태 해시, 이벤트 replay로 검증하는 방법을 정리한다."
 math: true
+lang: ko-KR
+translation_key: deterministic-simulation-testing-invariants-replay
 ---
+
+{% include language-switcher.html %}
 
 시뮬레이션 테스트가 “대표 입력을 실행해 그래프가 비슷한지 본다”에 머물면 작은 변경이 어떤 법칙을 깨뜨렸는지 알기 어렵다. 반대로 출력 파일 전체를 golden file로 고정하면 무해한 부동소수점 차이에도 테스트가 깨지고, 잘못된 기존 결과를 영구 보존할 수 있다.
 

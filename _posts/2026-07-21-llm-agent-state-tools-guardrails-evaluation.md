@@ -3,10 +3,14 @@ title: "운영 가능한 LLM Agent 설계: State, Tools, Structured Output, Guar
 date: 2026-07-21 08:50:00 +0900
 categories: [AI, Agents]
 tags: [llm, ai-agents, tool-use, guardrails, evaluation]
-mermaid: true
-math: true
 description: LLM agent를 확률적 상태 머신으로 보고 상태·도구 계약·구조화 출력·권한·실패 복구·평가 체계를 설계하는 실전 아키텍처를 정리합니다.
+math: true
+mermaid: true
+lang: ko-KR
+translation_key: llm-agent-state-tools-guardrails-evaluation
 ---
+
+{% include language-switcher.html %}
 
 LLM agent는 “모델에게 목표를 주고 알아서 반복시키는 프로그램”이 아니다. 운영 가능한 agent는 **확률적 판단을 하는 모델과 결정론적 상태 전이, 제한된 도구, 검증 가능한 출력, 명시적 권한 경계**를 결합한 시스템이다.
 

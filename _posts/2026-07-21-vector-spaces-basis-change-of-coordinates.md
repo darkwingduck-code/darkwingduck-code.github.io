@@ -5,7 +5,11 @@ categories: [Mathematics, Linear Algebra]
 tags: [vector-space, subspace, span, linear-independence, basis, dimension, change-of-basis]
 description: "부분공간, 생성, 선형독립, 기저, 차원, 좌표변환을 정의와 계산 예시, 실전 검증 절차까지 연결해 정리한다."
 math: true
+lang: ko-KR
+translation_key: vector-spaces-basis-change-of-coordinates
 ---
+
+{% include language-switcher.html %}
 
 선형대수에서 자주 생기는 혼란은 계산법보다 **서로 다른 층위의 개념을 섞는 것**에서 시작한다. 벡터공간은 연산이 성립하는 무대이고, 부분공간은 그 안에서 닫혀 있는 작은 무대다. span은 주어진 벡터로 만들 수 있는 범위, 선형독립은 표현의 중복이 없는 상태, 기저는 그 둘을 동시에 만족하는 좌표계다.
 

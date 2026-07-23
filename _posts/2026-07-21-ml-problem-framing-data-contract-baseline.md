@@ -3,10 +3,14 @@ title: "머신러닝 프로젝트의 출발점: 문제 정의, 데이터 계약,
 date: 2026-07-21 08:00:00 +0900
 categories: [AI, Machine Learning]
 tags: [machine-learning, problem-framing, data-contract, data-leakage, baseline]
-mermaid: true
-math: true
 description: 모델 선택보다 먼저 고정해야 할 의사결정 문제, 관측 시점, 데이터 계약, 누수 점검, 베이스라인 설계를 하나의 재현 가능한 워크플로로 정리합니다.
+math: true
+mermaid: true
+lang: ko-KR
+translation_key: ml-problem-framing-data-contract-baseline
 ---
+
+{% include language-switcher.html %}
 
 좋은 머신러닝 시스템은 복잡한 모델에서 시작하지 않는다. **누가, 언제, 어떤 정보를 사용해, 어떤 행동을 더 잘 선택할 것인가**를 명시하는 데서 시작한다. 이 질문이 불분명하면 높은 검증 점수도 실제 가치로 연결되지 않는다.
 

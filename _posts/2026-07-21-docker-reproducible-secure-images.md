@@ -4,7 +4,11 @@ date: 2026-07-21 09:40:00 +0900
 categories: [Platform Engineering, Containers]
 tags: [docker, containers, reproducibility, supply-chain, security]
 description: Docker의 layer와 build context를 기준으로 multi-stage build, dependency 고정, healthcheck, non-root 실행과 이미지 검증 절차를 설계합니다.
+lang: ko-KR
+translation_key: docker-reproducible-secure-images
 ---
+
+{% include language-switcher.html %}
 
 ## 문제: “내 컴퓨터에서는 된다”를 이미지 안으로 옮길 수도 있다
 

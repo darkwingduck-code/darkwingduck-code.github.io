@@ -3,10 +3,14 @@ title: "신뢰할 수 있는 Surrogate Model: Active Learning, 불확실성, 도
 date: 2026-07-21 08:30:00 +0900
 categories: [AI, Scientific ML]
 tags: [surrogate-model, active-learning, uncertainty-quantification, design-of-experiments, scientific-ml]
-mermaid: true
-math: true
 description: 고비용 해석·실험을 근사하는 surrogate model을 설계할 때 표본 설계, active learning, 불확실성 분해, 외삽 방지, 검증과 중단 기준을 연결하는 방법을 정리합니다.
+math: true
+mermaid: true
+lang: ko-KR
+translation_key: surrogate-active-learning-uncertainty-domain-boundary
 ---
+
+{% include language-switcher.html %}
 
 Surrogate model은 고비용 시뮬레이션이나 실험의 입력–출력 관계를 빠르게 근사한다. 제대로 설계하면 탐색, 최적화, 민감도 분석, 실시간 의사결정의 계산 비용을 크게 낮출 수 있다. 그러나 학습 영역 밖에서도 그럴듯한 값을 내놓기 때문에, 평균 오차가 작은 모델이 가장 위험한 모델이 되기도 한다.
 

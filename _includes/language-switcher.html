@@ -1,0 +1,20 @@
+{% assign translation_key = page.translation_key %}
+{% if translation_key %}
+  {% assign translations = site.posts | where: "translation_key", translation_key %}
+  <nav class="post-language-switcher" aria-label="Available languages">
+    <span aria-hidden="true">🌐</span>
+    <span class="visually-hidden">Available languages:</span>
+    {% for language in site.data.languages %}
+      {% assign translation = translations | where: "lang", language.code | first %}
+      {% if translation %}
+        {% if page.lang == language.code %}
+          <strong lang="{{ language.code }}" aria-current="page">{{ language.label }}</strong>
+        {% else %}
+          <a href="{{ translation.url | relative_url }}" lang="{{ language.code }}" hreflang="{{ language.code }}">{{ language.label }}</a>
+        {% endif %}
+        {% unless forloop.last %}<span aria-hidden="true"> · </span>{% endunless %}
+      {% endif %}
+    {% endfor %}
+  </nav>
+  <hr>
+{% endif %}

@@ -4,7 +4,11 @@ date: 2026-07-21 09:20:00 +0900
 categories: [Platform Engineering, CI-CD]
 tags: [github-actions, ci-cd, supply-chain, automation, security]
 description: GitHub Actions의 workflow·job·runner 신뢰 경계를 이해하고 permissions, secrets, environments, matrix, cache, concurrency를 안전하게 설계합니다.
+lang: ko-KR
+translation_key: github-actions-ci-cd-design
 ---
+
+{% include language-switcher.html %}
 
 ## 문제: 통과하는 workflow와 신뢰할 수 있는 pipeline은 다르다
 
