@@ -65,8 +65,15 @@ POST_NAME = re.compile(r"^\d{4}-\d{2}-\d{2}-[a-z0-9]+(?:-[a-z0-9]+)*\.md$")
 DATE_VALUE = re.compile(
     r"^\d{4}-\d{2}-\d{2}[ T]\d{2}:\d{2}:\d{2} (?:[+-]\d{4}|[+-]\d{2}:\d{2})$"
 )
-SUPPORTED_LANGUAGES = ("ko-KR", "ja-JP", "en", "fr-FR", "de-DE")
-LANGUAGE_SUFFIXES = {"ko-KR": "", "ja-JP": "ja", "en": "en", "fr-FR": "fr", "de-DE": "de"}
+SUPPORTED_LANGUAGES = ("ko-KR", "ja-JP", "en", "fr-FR", "de-DE", "es")
+LANGUAGE_SUFFIXES = {
+    "ko-KR": "",
+    "ja-JP": "ja",
+    "en": "en",
+    "fr-FR": "fr",
+    "de-DE": "de",
+    "es": "es",
+}
 TRANSLATION_INCLUDE = "{% include language-switcher.html %}"
 
 
