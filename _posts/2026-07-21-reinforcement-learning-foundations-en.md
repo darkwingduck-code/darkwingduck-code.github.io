@@ -308,7 +308,7 @@ Especially in high-risk systems, retain independent interlocks and human supervi
 
 ## 13. Official references
 
-- [Official online edition of Reinforcement Learning: An Introduction](http://incompleteideas.net/book/the-book-2nd.html)
+- [Official online edition of Reinforcement Learning: An Introduction](https://incompleteideas.net/book/the-book-2nd.html)
 - [Official Gymnasium documentation](https://gymnasium.farama.org/)
 - [Official Stable-Baselines3 documentation](https://stable-baselines3.readthedocs.io/)
 - [Original D4RL paper](https://arxiv.org/abs/2004.07219)

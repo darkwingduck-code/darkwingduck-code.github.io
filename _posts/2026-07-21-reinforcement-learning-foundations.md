@@ -307,7 +307,7 @@ RL은 검증된 안전 제어기를 자동 대체하지 않는다.
 
 ## 13. 공식 참고자료
 
-- [Reinforcement Learning: An Introduction 공식 공개본](http://incompleteideas.net/book/the-book-2nd.html)
+- [Reinforcement Learning: An Introduction 공식 공개본](https://incompleteideas.net/book/the-book-2nd.html)
 - [Gymnasium 공식 문서](https://gymnasium.farama.org/)
 - [Stable-Baselines3 공식 문서](https://stable-baselines3.readthedocs.io/)
 - [D4RL 원 논문](https://arxiv.org/abs/2004.07219)

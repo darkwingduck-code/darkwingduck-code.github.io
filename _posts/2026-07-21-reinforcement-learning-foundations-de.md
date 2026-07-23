@@ -308,7 +308,7 @@ Insbesondere in Hochrisikosystemen müssen unabhängige Interlocks und menschlic
 
 ## 13. Offizielle Referenzen
 
-- [Offizielle Online-Ausgabe von Reinforcement Learning: An Introduction](http://incompleteideas.net/book/the-book-2nd.html)
+- [Offizielle Online-Ausgabe von Reinforcement Learning: An Introduction](https://incompleteideas.net/book/the-book-2nd.html)
 - [Offizielle Gymnasium-Dokumentation](https://gymnasium.farama.org/)
 - [Offizielle Stable-Baselines3-Dokumentation](https://stable-baselines3.readthedocs.io/)
 - [Ursprüngliche D4RL-Publikation](https://arxiv.org/abs/2004.07219)

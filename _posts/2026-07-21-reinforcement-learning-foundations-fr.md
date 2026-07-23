@@ -308,7 +308,7 @@ Dans les systèmes à haut risque en particulier, conservez un verrouillage ind�
 
 ## 13. Références officielles
 
-- [Version publique officielle de Reinforcement Learning: An Introduction](http://incompleteideas.net/book/the-book-2nd.html)
+- [Version publique officielle de Reinforcement Learning: An Introduction](https://incompleteideas.net/book/the-book-2nd.html)
 - [Documentation officielle de Gymnasium](https://gymnasium.farama.org/)
 - [Documentation officielle de Stable-Baselines3](https://stable-baselines3.readthedocs.io/)
 - [Article original sur D4RL](https://arxiv.org/abs/2004.07219)
