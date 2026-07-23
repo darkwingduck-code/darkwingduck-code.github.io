@@ -12,7 +12,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 POSTS = ROOT / "_posts"
-LANGUAGES = ("ko-KR", "ja-JP", "en", "fr-FR", "de-DE")
+LANGUAGES = ("ko-KR", "ja-JP", "en", "fr-FR", "de-DE", "es")
 FENCE = re.compile(
     r"^(?:```([^\n]*)\n(.*?)^```\s*$|~~~([^\n]*)\n(.*?)^~~~\s*$)",
     re.MULTILINE | re.DOTALL,
@@ -31,6 +31,9 @@ LATIN_STOPWORDS = {
     ),
     "de-DE": frozenset(
         "aber als auf aus bei das dass dem den der des die ein eine einer einem einen es für im in ist kann mit nicht oder sind sich und von wenn werden wird zu zum zur".split()
+    ),
+    "es": frozenset(
+        "al como con cuando de del el en es esta este la las lo los más no o para por que se sin son su sus un una y".split()
     ),
 }
 
@@ -135,7 +138,7 @@ def compare(source: Post, target: Post) -> list[str]:
         if target_score < 12 or target_score <= competing_score:
             errors.append(
                 f"{label}: target-language prose heuristic failed "
-                f"(scores: en={scores['en']}, fr-FR={scores['fr-FR']}, de-DE={scores['de-DE']})"
+                "(scores: " + ", ".join(f"{language}={score}" for language, score in scores.items()) + ")"
             )
     return errors
 

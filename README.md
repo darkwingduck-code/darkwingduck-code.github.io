@@ -4,7 +4,7 @@
 
 [Technical Notes 바로가기](https://darkwingduck-code.github.io)
 
-[한국어](https://darkwingduck-code.github.io/languages/ko/) · [日本語](https://darkwingduck-code.github.io/languages/ja/) · [English](https://darkwingduck-code.github.io/languages/en/) · [Français](https://darkwingduck-code.github.io/languages/fr/) · [Deutsch](https://darkwingduck-code.github.io/languages/de/)
+[한국어](https://darkwingduck-code.github.io/languages/ko/) · [日本語](https://darkwingduck-code.github.io/languages/ja/) · [English](https://darkwingduck-code.github.io/languages/en/) · [Français](https://darkwingduck-code.github.io/languages/fr/) · [Deutsch](https://darkwingduck-code.github.io/languages/de/) · [Español](https://darkwingduck-code.github.io/languages/es/)
 
 [![Build and Deploy](https://github.com/darkwingduck-code/darkwingduck-code.github.io/actions/workflows/pages-deploy.yml/badge.svg)](https://github.com/darkwingduck-code/darkwingduck-code.github.io/actions/workflows/pages-deploy.yml)
 [![GitHub license](https://img.shields.io/github/license/darkwingduck-code/darkwingduck-code.github.io.svg)](LICENSE)

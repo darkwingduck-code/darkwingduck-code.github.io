@@ -12,8 +12,8 @@ from zoneinfo import ZoneInfo
 ROOT = Path(__file__).resolve().parents[1]
 POSTS = ROOT / "_posts"
 OUTPUT = ROOT / "docs" / "POST_MANIFEST.md"
-LANGUAGES = ("ko-KR", "ja-JP", "en", "fr-FR", "de-DE")
-LABELS = {"ko-KR": "KO", "ja-JP": "JA", "en": "EN", "fr-FR": "FR", "de-DE": "DE"}
+LANGUAGES = ("ko-KR", "ja-JP", "en", "fr-FR", "de-DE", "es")
+LABELS = {"ko-KR": "KO", "ja-JP": "JA", "en": "EN", "fr-FR": "FR", "de-DE": "DE", "es": "ES"}
 
 
 def parse(path: Path) -> dict[str, str]:
@@ -43,8 +43,8 @@ def main() -> int:
         f"- 지식 단위: {len(groups)}편", f"- 언어판: {sum(counts.values())}개",
         "- 언어별 수: " + ", ".join(f"{LABELS[x]} {counts[x]}" for x in LANGUAGES),
         "- 한국어판이 의미 기준 원문이며 나머지 판은 같은 `translation_key`로 연결됩니다.", "",
-        "| # | translation_key | 한국어 제목 | KO | JA | EN | FR | DE |",
-        "|---:|---|---|---|---|---|---|---|",
+        "| # | translation_key | 한국어 제목 | KO | JA | EN | FR | DE | ES |",
+        "|---:|---|---|---|---|---|---|---|---|",
     ]
     for index, (key, editions) in enumerate(sorted(groups.items()), start=1):
         title = editions.get("ko-KR", (Path(), {}))[1].get("title", key).replace("|", "\\|")

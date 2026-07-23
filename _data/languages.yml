@@ -23,3 +23,8 @@
   label: Deutsch
   title: Technische Notizen auf Deutsch
   description: Hier finden Sie die deutschen Fassungen der technischen Notizen.
+- code: es
+  slug: es
+  label: Español
+  title: Notas técnicas en español
+  description: Consulta las ediciones en español de las notas técnicas.
