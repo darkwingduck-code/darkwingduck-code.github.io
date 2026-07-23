@@ -49,6 +49,9 @@ read_baseurl() {
 }
 
 main() {
+  python3 tools/content_audit.py
+  python3 tools/translation_audit.py
+
   # clean up
   if [[ -d $SITE_DIR ]]; then
     rm -rf "$SITE_DIR"

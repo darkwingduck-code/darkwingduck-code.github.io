@@ -3,10 +3,14 @@ title: "재현 가능한 MLOps: Data·Model Lineage, Registry, 안전한 Promoti
 date: 2026-07-21 08:40:00 +0900
 categories: [AI, MLOps]
 tags: [mlops, reproducibility, data-lineage, model-registry, deployment]
-mermaid: true
-math: true
 description: 실험 재현성에서 운영 승격까지 데이터·코드·환경·모델의 lineage를 연결하고, registry와 검증 gate, shadow·canary·rollback으로 안전하게 배포하는 방법을 정리합니다.
+math: true
+mermaid: true
+lang: ko-KR
+translation_key: mlops-reproducibility-lineage-registry-promotion
 ---
+
+{% include language-switcher.html %}
 
 MLOps의 목적은 모델 훈련을 자동화하는 데 그치지 않는다. **어떤 데이터와 코드로 왜 이 모델이 만들어졌는지 증명하고, 같은 조건에서 다시 만들며, 안전하게 승격하고, 문제가 생기면 되돌릴 수 있게 하는 것**이 핵심이다.
 

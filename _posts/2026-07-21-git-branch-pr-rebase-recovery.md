@@ -4,7 +4,11 @@ date: 2026-07-21 09:10:00 +0900
 categories: [Platform Engineering, Git]
 tags: [git, branching, pull-request, rebase, recovery]
 description: 브랜치와 커밋 그래프를 기준으로 PR 통합 전략을 선택하고, 실수를 데이터 손실 없이 복구하는 안전한 절차를 정리합니다.
+lang: ko-KR
+translation_key: git-branch-pr-rebase-recovery
 ---
+
+{% include language-switcher.html %}
 
 ## 문제: Git 사고는 “명령”보다 “공유 여부”를 놓칠 때 커진다
 

@@ -4,7 +4,11 @@ date: 2026-07-21 10:10:00 +0900
 categories: [Software Engineering, Python]
 tags: [python, packaging, testing, typing, logging, reproducibility]
 description: 스크립트를 재현 가능하고 테스트 가능하며 관측 가능한 Python 애플리케이션으로 발전시키는 실전 기준을 정리합니다.
+lang: ko-KR
+translation_key: python-production-baseline
 ---
+
+{% include language-switcher.html %}
 
 Python 파일이 한 번 실행되는 것과, 다른 환경에서도 안전하게 반복 실행되는 소프트웨어가 되는 것은 전혀 다른 문제다. 운영 가능한 코드의 핵심은 화려한 프레임워크가 아니라 **입력·출력·의존성·실패가 명시되어 있는가**에 있다.
 

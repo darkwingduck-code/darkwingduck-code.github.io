@@ -5,7 +5,11 @@ categories: [Scientific Computing, Verification and Validation]
 tags: [verification, validation, convergence, mesh-independence, time-step, conservation, numerical-error]
 description: "코드 검증, 해 검증, 실험적 validation을 구분하고 수렴성·격자 및 시간간격 독립성·보존성으로 수치 결과의 신뢰도를 평가하는 절차를 정리한다."
 math: true
+lang: ko-KR
+translation_key: numerical-verification-validation-convergence
 ---
+
+{% include language-switcher.html %}
 
 그럴듯한 contour와 매끄러운 곡선은 정확성의 증거가 아니다. 수치 시뮬레이션이 믿을 만하려면 적어도 다음 질문을 분리해야 한다.
 

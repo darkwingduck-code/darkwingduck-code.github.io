@@ -1,0 +1,12 @@
+{% assign localized_posts = site.posts | where: "lang", include.lang %}
+{% if localized_posts.size > 0 %}
+  <ul>
+    {% for post in localized_posts %}
+      {% unless post.translation_exempt %}
+        <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a> <small>{{ post.date | date: "%Y-%m-%d" }}</small></li>
+      {% endunless %}
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>No translated posts are available yet.</p>
+{% endif %}

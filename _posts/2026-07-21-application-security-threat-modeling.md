@@ -3,9 +3,13 @@ title: "기능 구현 전에 시작하는 위협 모델링과 애플리케이션
 date: 2026-07-21 10:50:00 +0900
 categories: [Software Engineering, Security]
 tags: [security, threat-modeling, least-privilege, secrets, secure-development, desktop-security]
-mermaid: true
 description: 자산과 신뢰 경계를 먼저 그린 뒤 인증·권한·비밀·공급망·데스크톱 앱 보호를 검증 가능한 통제로 바꾸는 방법을 설명합니다.
+mermaid: true
+lang: ko-KR
+translation_key: application-security-threat-modeling
 ---
+
+{% include language-switcher.html %}
 
 보안은 마지막에 scanner를 실행하는 단계가 아니다. 무엇을 보호하고, 누구를 신뢰하며, 어떤 실패를 견뎌야 하는지 설계할 때 시작된다. 완벽한 변조 방지보다 중요한 것은 **중요한 권한과 비밀을 공격자가 통제할 수 있는 위치에 두지 않는 것**이다.
 

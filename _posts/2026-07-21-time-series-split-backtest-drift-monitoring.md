@@ -3,10 +3,14 @@ title: "시계열 머신러닝 검증: 시간 분할, 백테스트, 드리프트
 date: 2026-07-21 08:20:00 +0900
 categories: [AI, Time Series]
 tags: [time-series, backtesting, data-drift, monitoring, validation]
-mermaid: true
-math: true
 description: 시계열 모델에서 무작위 분할을 피하고 rolling backtest, gap과 label maturity, drift 진단, 지연 레이블 모니터링을 설계하는 실전 원칙을 정리합니다.
+math: true
+mermaid: true
+lang: ko-KR
+translation_key: time-series-split-backtest-drift-monitoring
 ---
+
+{% include language-switcher.html %}
 
 시계열 모델의 검증은 과거 데이터를 잘 설명하는지 확인하는 일이 아니다. **그 시점까지 알려진 정보로 다음 시점의 결정을 얼마나 안정적으로 지원했을지 재연하는 일**이다. 시간 순서를 보존해도 특징 생성, 레이블 중첩, 하이퍼파라미터 선택에서 미래 정보가 들어가면 백테스트는 쉽게 낙관적으로 변한다.
 

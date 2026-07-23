@@ -3,9 +3,13 @@ title: "데이터 무결성을 지키는 트랜잭션, 인덱스, Outbox 패턴"
 date: 2026-07-21 11:00:00 +0900
 categories: [Data Engineering, Databases]
 tags: [sql, transactions, isolation, indexing, outbox, idempotency]
-mermaid: true
 description: ACID를 실제 동시성 문제로 해석하고 제약조건·인덱스·짧은 트랜잭션·Outbox로 데이터와 이벤트의 일관성을 지키는 방법을 정리합니다.
+mermaid: true
+lang: ko-KR
+translation_key: database-transactions-indexes-outbox
 ---
+
+{% include language-switcher.html %}
 
 데이터베이스 신뢰성은 “쿼리가 실행된다”보다 **경쟁, 재시도, 부분 실패 속에서도 불변조건이 보존되는가**로 판단한다. 애플리케이션의 사전 검사만 믿지 말고 데이터베이스 제약과 트랜잭션을 최종 방어선으로 사용해야 한다.
 

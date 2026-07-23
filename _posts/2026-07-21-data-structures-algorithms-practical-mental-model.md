@@ -5,7 +5,11 @@ categories: [Computer Science, Algorithms]
 tags: [data-structures, algorithms, big-o, amortized-analysis, graph-algorithms, invariants, benchmarking]
 description: "Big-O와 상각분석을 실제 비용 모델로 해석하고 array, hash, heap, tree, graph 알고리즘을 요구사항·정확성·측정 근거로 선택하는 법을 정리한다."
 math: true
+lang: ko-KR
+translation_key: data-structures-algorithms-practical-mental-model
 ---
+
+{% include language-switcher.html %}
 
 자료구조와 알고리즘을 시험용 표로 외우면 “hash는 \(O(1)\), tree는 \(O(\log n)\)” 같은 문장만 남는다. 실제 설계에서는 그보다 먼저 다음을 물어야 한다.
 

@@ -4,7 +4,11 @@ date: 2026-07-21 09:50:00 +0900
 categories: [Platform Engineering, Automation]
 tags: [powershell, bash, windows, wsl, scripting, troubleshooting]
 description: shell·프로세스·경로·인코딩의 차이를 분리하고 Bash와 PowerShell 자동화를 실패 즉시 중단되고 재실행 가능한 형태로 설계합니다.
+lang: ko-KR
+translation_key: cross-platform-shell-automation
 ---
+
+{% include language-switcher.html %}
 
 ## 문제: 같은 명령처럼 보여도 실행 주체와 데이터 규칙이 다르다
 

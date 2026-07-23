@@ -6,7 +6,11 @@ tags: [observability, slo, incident-response, monitoring, reliability]
 description: 사용자 여정에서 SLI와 SLO를 정의하고 metrics·logs·traces를 연결해 실행 가능한 경보와 incident runbook을 만드는 방법을 정리합니다.
 mermaid: true
 math: true
+lang: ko-KR
+translation_key: observability-slo-incident-runbook
 ---
+
+{% include language-switcher.html %}
 
 ## 문제: telemetry가 많아도 장애를 설명하지 못할 수 있다
 

@@ -4,7 +4,11 @@ date: 2026-07-21 10:30:00 +0900
 categories: [Software Engineering, API Design]
 tags: [api, openapi, idempotency, schema, pagination, versioning]
 description: API를 함수 모음이 아닌 장기적으로 진화하는 계약으로 보고 요청·응답·오류·재시도·버전을 설계하는 방법을 다룹니다.
+lang: ko-KR
+translation_key: api-contract-idempotency
 ---
+
+{% include language-switcher.html %}
 
 API의 품질은 endpoint 개수보다 **호출자가 성공, 실패, 재시도를 예측할 수 있는가**로 판단해야 한다. 서버 구현은 바뀌어도 계약은 여러 클라이언트와 자동화에 오래 남는다.
 

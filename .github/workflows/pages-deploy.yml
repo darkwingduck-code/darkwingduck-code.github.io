@@ -51,7 +51,9 @@ jobs:
           bundler-cache: true
 
       - name: Audit public content
-        run: python3 tools/content_audit.py
+        run: |
+          python3 tools/content_audit.py
+          python3 tools/translation_audit.py
 
       - name: Build site
         run: bundle exec jekyll b -d "_site${{ steps.pages.outputs.base_path }}"

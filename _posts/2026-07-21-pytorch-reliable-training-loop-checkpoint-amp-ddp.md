@@ -3,10 +3,14 @@ title: "신뢰할 수 있는 PyTorch 학습 루프: 계약, AMP, Checkpoint, 재
 date: 2026-07-21 09:10:00 +0900
 categories: [AI, PyTorch]
 tags: [pytorch, training-loop, checkpointing, mixed-precision, distributed-training]
-mermaid: true
-math: true
 description: shape·dtype·device 계약부터 train/eval, autograd, AMP, gradient clipping, 완전한 checkpoint, 재현성, profiling, DDP까지 견고한 PyTorch 학습 루프를 설계합니다.
+math: true
+mermaid: true
+lang: ko-KR
+translation_key: pytorch-reliable-training-loop-checkpoint-amp-ddp
 ---
+
+{% include language-switcher.html %}
 
 PyTorch 학습 코드는 짧게 만들기 쉽지만, **중단 후 정확히 재개되고 검증 시 조용히 상태가 바뀌지 않으며 단일 GPU에서 다중 GPU까지 같은 의미를 유지하는 루프**를 만들기는 어렵다. 모델 구조보다 학습 루프의 작은 실수가 실험 결과를 더 크게 왜곡할 때도 많다.
 

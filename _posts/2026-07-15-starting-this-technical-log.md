@@ -4,6 +4,8 @@ date: 2026-07-15 17:00:00 +0900
 categories: [Notes, Meta]
 tags: [simulation, scientific-computing, reproducibility]
 description: 시뮬레이션, 과학 컴퓨팅, AI 자동화 과정에서 얻은 내용을 재현 가능한 형태로 기록합니다.
+lang: ko-KR
+translation_exempt: true
 ---
 
 ## 이 블로그의 목적
@@ -13,7 +15,7 @@ description: 시뮬레이션, 과학 컴퓨팅, AI 자동화 과정에서 얻은
 이곳에는 다음 주제를 중심으로 기록합니다.
 
 - CFD와 물리 기반 시뮬레이션
-- 수소 및 화재 안전 해석
+- 안전 해석과 위험성평가 방법론
 - Scientific ML과 surrogate model
 - Python, C++, C#, MATLAB을 활용한 자동화
 - AI agent를 활용한 연구·개발 워크플로

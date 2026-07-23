@@ -21,7 +21,7 @@
 - 미공개 연구 질문, 특정 데이터, 실험 조건·수치·결과, 투고 전략
 - 개인의 건강·재무·채용·가족·일정 정보
 
-연구 관련 글은 특정 연구 대상이 아니라 문제 정의, 검증·검증(validation) 구분, 실험설계, 불확실성, 재현성, 소프트웨어 릴리스 같은 **일반 방법론**만 다룬다.
+연구 관련 글은 특정 연구 대상이 아니라 문제 정의, verification·validation 구분, 실험설계, 불확실성, 재현성, 소프트웨어 릴리스 같은 **일반 방법론**만 다룬다.
 
 ## 예제 작성 규칙
 
@@ -43,11 +43,19 @@
 5. 흔한 실패와 한계
 6. 공식 참고 자료
 
-Front matter에는 `title`, `date`, 2단 `categories`, 소문자 `tags`, 한 문장 `description`을 둔다.
+Front matter에는 `title`, `date`, 2단 `categories`, 소문자 `tags`, 한 문장 `description`, `lang`, `translation_key`를 둔다.
+
+## 다국어 편집 규칙
+
+- 기술 포스트는 `ko-KR`, `ja-JP`, `en`, `fr-FR`, `de-DE` 다섯 판을 하나의 `translation_key`로 묶는다.
+- 제목, 설명, 본문, 표, checklist는 해당 언어의 자연스러운 기술 문장으로 번역한다.
+- 명령, 코드, 식별자, 공식 문서 URL, 수식의 의미는 원문과 동일하게 유지한다.
+- 번역판에는 `hidden: true`를 두고 언어별 색인과 글 상단 전환 메뉴에서 접근한다.
+- 번역하면서 새로운 사례·수치·프로젝트 맥락을 추가하지 않는다.
 
 ## 공개 전 점검
 
-1. `python3 tools/content_audit.py`를 실행한다.
+1. `python3 tools/content_audit.py`와 `python3 tools/translation_audit.py`를 실행한다.
 2. 이름, 연락처, 회사·프로젝트 식별자, 실제 수치가 없는지 사람이 다시 읽는다.
 3. 연구 글은 구체 대상이 없어도 방법론이 독립적으로 유용한지 확인한다.
 4. 코드와 명령이 파괴적이지 않고 placeholder가 명백한지 확인한다.
